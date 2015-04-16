@@ -1,0 +1,68 @@
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-container > div:nth-child(2) .owl-dots {
+    display: block !important;
+}
+
+.slide-item-category-carousel .owl-controls > .owl-dots {
+    display: none !important;
+}
+
+.slide-item-category-carousel .owl-controls > .owl-nav > div.owl-next,
+.slide-item-category-carousel .owl-controls > .owl-nav > div.owl-prev {
+    display: initial !important;
+}
+
+.slider-container .owl-stage-outer > div > .owl-item {
+    /*background: url(http://chc.ydns.eu/wp-content/uploads/2014/03/area-negocios-productos.jpg);*/
+}
+
+/* Custom dots */
+.owl-theme .owl-dots .owl-dot span {
+    border-radius: 50%;
+    height: 190px;
+    width: 190px;
+}
+
+.slide-item-category-carousel .item-image {
+    display: block;
+    margin: 0 auto;
+    max-height: 290px;
+    max-width: 290px;
+}
+
+.slide-item-category-carousel .item-image img {
+    max-height: 290px;
+    max-width: 290px;
+}
+
+.slide-item-category-carousel .item-content {
+    color: #282828;
+    font-family: "Signika", Helvetica, Arial, Verdana, sans-serif;
+    font-size: 18px;
+    padding: 40px 20px;
+    text-align: justify;
+}
+
+.slide-item-category-carousel .item-content p {
+    text-align: justify;
+}
+
+.slide-item-category-carousel .owl-prev,
+.slide-item-category-carousel .owl-next {
+    background-color: rgba(0,0,0,0.8) !important;
+    position: absolute;
+    top: 50%;
+    text-transform: capitalize;
+}
+
+.slide-item-category-carousel .owl-prev {
+    left: 0;
+}
+
+.slide-item-category-carousel .owl-next {
+    right: 0;
+}
