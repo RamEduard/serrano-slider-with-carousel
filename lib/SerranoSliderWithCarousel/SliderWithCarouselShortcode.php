@@ -67,13 +67,14 @@ class SliderWithCarouselShortcode
             'class' => 'customPortholeSlider',
         ), $atts);
         
+        //$categories = get_terms(array('categoria-carousel'), array('hide_empty' => true));
         $categories = get_terms(array('categoria-carousel'), array('hide_empty' => true));
 
         $html = '<div class="slider-container ' . $atts['class'] . '">';
 
         foreach ($categories as $category) :
-            $imageNav = get_field('imagen_navegacion', $category->ID);
-            $imageFondo = get_field('imagen_fondo', $category->ID);
+            $imageNav = get_field('imagen_de_navegacion', $category->term_id);
+            $imageFondo = get_field('imagen_de_fondo', $category->term_id);
 
             echo '<pre>';
             var_dump($imageNav);var_dump($imageFondo);
@@ -102,13 +103,7 @@ class SliderWithCarouselShortcode
         if ($slug != '') {
             $queryPosts = new \WP_Query(array(
                 'post_type'     => 'area-negocios',
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'categoria-carousel',
-                        'field'    => 'slug',
-                        'terms'    => $slug,
-                    ),
-                ),
+                'categoria-carousel' => $slug
             ));
             
             // Array posts

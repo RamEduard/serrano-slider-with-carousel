@@ -15,7 +15,7 @@ class AreaNegociosPostType
 	 */
 	static function customPostTypeRegister()
 	{
-		register_post_type('areas-negocios',
+		register_post_type('area-negocios',
 	    // CPT Options
 	        array(
 	        	'has_archive' => true,
@@ -24,7 +24,7 @@ class AreaNegociosPostType
 	                'singular_name' => __('Logo')
 	           	),
 	            'public' => true,
-	            'rewrite' => array('slug' => 'areas-negocios'),
+	            'rewrite' => array('slug' => 'area-negocios'),
 	            'supports' => array(
 	            	//'custom-fields',
 	            	'editor',
@@ -65,6 +65,6 @@ class AreaNegociosPostType
 			'rewrite'           => array( 'slug' => 'categoria-carousel'),
 		);
 
-  		register_taxonomy('categoria-carousel', 'areas-negocios', $args);
+  		register_taxonomy('categoria-carousel', 'area-negocios', $args);
 	}
 }
