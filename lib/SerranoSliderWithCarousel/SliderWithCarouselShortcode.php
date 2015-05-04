@@ -72,9 +72,16 @@ class SliderWithCarouselShortcode
         $html = '<div class="slider-container ' . $atts['class'] . '">';
 
         foreach ($categories as $category) :
-            $image = get_field('imagen_navegacion', $category);
+            $imageNav = get_field('imagen_navegacion', $category->ID);
+            $imageFondo = get_field('imagen_fondo', $category->ID);
+
+            echo '<pre>';
+            var_dump($imageNav);var_dump($imageFondo);
+            echo '</pre>';
             
-            $html .= '<div class="slide-item-category-carousel slide-item-' . $category->slug . '">';
+            $html .= '<div class="slide-item-category-carousel slide-item-' . $category->slug . '" 
+                           data-thumb-src="http://chcgroup.com.ve/wp-content/uploads/2015/03/area-negocios-construccion.png"
+                           data-full-src="http://chcgroup.com.ve/wp-content/uploads/2015/03/area-negocios.jpg">';
             $html .= self::getPostsCarouselFromCategory($category->slug);
             $html .= '</div>';            
         endforeach;

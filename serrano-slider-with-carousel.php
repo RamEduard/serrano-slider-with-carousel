@@ -14,9 +14,12 @@ if (!defined('URL_PLUGIN'))
 
 $loader = require_once 'lib/autoloader.php';
 $loader->add('SerranoSliderWithCarousel', __DIR__ . '/lib');
-//autoloaderRequire(__DIR__ . '/lib/SerranoSliderWithCarousel/SliderWithCarouselShortcode.php');
+
+// Register Custom Post Type and Categories
+// Area de Negocios - Logos
+add_action('init', 'SerranoSliderWithCarousel\\AreaNegociosPostType::customPostTypeRegister');
+add_action('init', 'SerranoSliderWithCarousel\\AreaNegociosPostType::customCategoriesRegister');
 
 // Register SliderWithCarouselShortcode
 SerranoSliderWithCarousel\SliderWithCarouselShortcode::getInstance()->register();
-
 add_shortcode('slider_with_carousel', 'SerranoSliderWithCarousel\SliderWithCarouselShortcode::shortcode');

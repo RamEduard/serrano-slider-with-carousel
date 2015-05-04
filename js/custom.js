@@ -51,5 +51,29 @@
                 }
             }
         });
+
+        var setBackgroundSlidesNavs = function() {
+            var imagesOrdered = [];
+
+            $('.slide-item-category-carousel').each(function() {
+                imagesOrdered.push({
+                    "thumb": $(this).attr('data-thumb-src'),
+                    "full": $(this).attr('data-full-src')
+                });
+            });
+
+            var dots   = $('.slider-container > div.owl-controls > div.owl-dots > div.owl-dot span');
+            var slides = $('.slider-container div.slide-item-category-carousel');
+
+            for (var i = 0; i < dots.length; i++) {
+                $(dots[i]).css('background-image', 'url(' + imagesOrdered[i].thumb + ')')
+                          .css('background-size', 'contain');
+                $(slides[i]).css('background-image', 'url(' + imagesOrdered[i].full + ')')
+                            .css('background-repeat', 'no-repeat')
+                            .css('background-size', '100% 300px');
+            }
+        };
+
+        setTimeout(setBackgroundSlidesNavs, 1);
     });
 })(jQuery);
