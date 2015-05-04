@@ -67,22 +67,17 @@ class SliderWithCarouselShortcode
             'class' => 'customPortholeSlider',
         ), $atts);
         
-        //$categories = get_terms(array('categoria-carousel'), array('hide_empty' => true));
         $categories = get_terms(array('categoria-carousel'), array('hide_empty' => true));
 
         $html = '<div class="slider-container ' . $atts['class'] . '">';
 
         foreach ($categories as $category) :
-            $imageNav = get_field('imagen_de_navegacion', $category->term_id);
-            $imageFondo = get_field('imagen_de_fondo', $category->term_id);
-
-            echo '<pre>';
-            var_dump($imageNav);var_dump($imageFondo);
-            echo '</pre>';
+            $imagenNav = get_field('imagen_de_navegacion', $category);
+            $imagenFondo = get_field('imagen_de_fondo', $category);
             
             $html .= '<div class="slide-item-category-carousel slide-item-' . $category->slug . '" 
-                           data-thumb-src="http://chcgroup.com.ve/wp-content/uploads/2015/03/area-negocios-construccion.png"
-                           data-full-src="http://chcgroup.com.ve/wp-content/uploads/2015/03/area-negocios.jpg">';
+                           data-thumb-src="' . $imagenNav['url'] . '"
+                           data-full-src="' . $imagenFondo['url'] . '">';
             $html .= self::getPostsCarouselFromCategory($category->slug);
             $html .= '</div>';            
         endforeach;
