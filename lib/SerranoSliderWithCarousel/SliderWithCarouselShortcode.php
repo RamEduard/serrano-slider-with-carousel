@@ -40,6 +40,9 @@ class SliderWithCarouselShortcode
         wp_register_script('owl_carousel_js', URL_PLUGIN . 'js/owl.carousel.js', '2.0.0');
         //Custom CSS
         wp_register_style('custom_slider_with_carousel_css', URL_PLUGIN . 'css/custom.css');
+        // jQuery UI
+        wp_register_style('jquery_ui_style', URL_PLUGIN . 'css/jquery-ui.css');
+        wp_register_script('jquery_ui_script', URL_PLUGIN . 'js/jquery-ui.js', '1.11.4');
         //Custom JS
         wp_register_script('custom_slider_with_carousel_js', URL_PLUGIN . 'js/custom.js');
         
@@ -47,7 +50,9 @@ class SliderWithCarouselShortcode
         wp_enqueue_style('owl_carousel_css');
         wp_enqueue_style('owl_carousel_theme_css');
         wp_enqueue_style('custom_slider_with_carousel_css');
+        wp_enqueue_style('jquery_ui_style');
         wp_enqueue_script('jquery');
+        wp_enqueue_script('jquery_ui_script');
         wp_enqueue_script('owl_carousel_js');
         wp_enqueue_script('custom_slider_with_carousel_js');
         
