@@ -77,7 +77,8 @@ class SliderWithCarouselShortcode
             
             $html .= '<div class="slide-item-category-carousel slide-item-' . $category->slug . '" 
                            data-thumb-src="' . $imagenNav['url'] . '"
-                           data-full-src="' . $imagenFondo['url'] . '">';
+                           data-full-src="' . $imagenFondo['url'] . '"
+                           data-title="' . $category->name . '">';
             $html .= self::getPostsCarouselFromCategory($category->slug);
             $html .= '</div>';            
         endforeach;
